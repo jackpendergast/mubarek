@@ -1,0 +1,8 @@
+version: "2.4"
+services:
+  apache:
+    image: 'penjack/bees'
+    ports:
+    - "80:80"
+    volumes:
+    - ./:/usr/local/apache2/htdocs

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!--Mubarek Al-Mutawa Assignment 5-->
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="description" content="CWeb 1010">
+	<meta name="keywords" content="JWST, Space, Exploration">
+	<meta name="author" content="Mubarek Al-Mutawa">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Mubarek Al-Mutawa: Home</title>
+	
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" >
+	
+	<link rel="icon" type="image/x-icon" href="images/icon.ico">
+	
+</head>
+
+<body>
+	
+		<a id="top"></a>
+		
+		<nav>
+			<ul>
+				<li style="border-style: outset; border-color: #CCAC00;">
+					<a href="index.html">
+						<svg width="20" height="20" stroke-width="2.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M3 9.5L12 4L21 9.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M19 13V19.4C19 19.7314 18.7314 20 18.4 20H5.6C5.26863 20 5 19.7314 5 19.4V13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+					</a>
+				</li>
+				
+				<li><a href="page2.html">Mission</a></li>
+				
+				<li><a href="page3.html">History</a></li>
+				
+				<li><a href="page4.html">Future</a></li>
+				
+				<li><a href="page5.html">Sources</a></li>
+				
+			</ul>
+		</nav>
+		
+		
+		<div class="grid-container">
+		
+			<div class="item1" ><img src="images/landscape.png" alt="landscape photo of jwst"></div>
+
+			
+			<div class="item3">
+			
+				<article>
+					<h2>Mission Statement</h2>
+					
+					<p>
+						Are you a fan of space, science and the Hubble Space Telescope? If yes, then this is the place you should be! Why? 
+						Because the next generation of space telescopes is upon us, and with that comes the lovely JWST. The Objective of this website is to give those interested in space science 
+						an intro to the JWST and some basic knowledge, so that you may have more interest in this topic. The choice of color on this webpage was directly inspired by the JWST in space with use of 
+						gold, silver, gray, and black. The layout uses plenty of rounded edges to give it a cleaner look as well as a black outline around most of the content. In the navbar, a gold border is created over whichever page 
+						the user is currently on, to help with navigation. I've included two uses of javascript. One is the button to change the background color of the page, and two is a clickable image on the home page to enlarge it. 
+						Some other graphics I've included are a home page logo, favicon, personal logo, email logo, and an arrow in the footer indicating that the text next to it is a link to bring the user back to the top of the page. 
+						The text style I used for the 'h2' tags is fantasy, I believe it fits with the theme well. In the body, the font style is arial, which means that anything a 'p' tag will inherit that style. 
+					</p>
+					
+					<h2>Intro to JWST</h2>
+					
+					<p>
+						The recently launched space telescope, JWST (James Webb Space Telescope), is equipped with some of the most advanced optic technology to date. 
+						The objective of this telescope is to discover the origins of life on other worlds and analyze the formation of the early universe. It is expected 
+						that this telescope will operate for about 20 years, plenty of time to discover so much about the universe.
+						Currently as of writing this piece, the JWST is complete with its mirror alignment and is now fine tuning its instruments. 
+						Once this is finished, we will be able to see further than ever before! So come on, lets explore everything that we need to know about this fantastic technology.
+					</p>
+					
+					<aside>
+						<h4>Carl Sagan</h4>
+						<p style="font-style: italic;">"Imagination will often carry us to worlds that never were. But without it we go nowhere."</p>
+					</aside>
+					
+					
+					<h3 style="float: left; font-family: fantasy;">Excellent Introductory Video Essays On The JWST</h3>
+					
+					<br><br><br><br>
+		
+					<iframe width="420" height="315" src="https://www.youtube.com/embed/BVByTTYJF3M" title="YouTube video player"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+							allowfullscreen>
+					</iframe>
+					
+					
+					<iframe width="420" height="315" src="https://www.youtube.com/embed/aICaAEXDJQQ" title="YouTube video player" 
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+							allowfullscreen>
+					</iframe>
+					
+					
+					<iframe width="420" height="315" src="https://www.youtube.com/embed/eLt5gkTK2Eo" title="YouTube video player" 
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+							allowfullscreen>
+					</iframe>
+			
+					<iframe width="420" height="315" src="https://www.youtube.com/embed/4P8fKd0IVOs" title="YouTube video player" 
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+							allowfullscreen>
+					</iframe>
+			
+			
+				</article>
+				
+			</div>
+			
+			
+			
+			<div class="item4"><img id="myImg" src="images/jwst1.jpg" alt="JWST launch diagram">	
+				
+			</div>
+			
+			<div id="myModal" class="modal">
+				<span class="close">&times;</span>
+				<img class="modal-content" alt="modal" id="img01" src="images/jwst1.jpg">
+				<div id="caption"></div>
+			</div>
+			
+			
+			<script> //script for clickable image to enlarge it - from w3 schools
+				// Get the modal
+				var modal = document.getElementById("myModal");
+
+				// Get the image and insert it inside the modal - use its "alt" text as a caption
+				var img = document.getElementById("myImg");
+				var modalImg = document.getElementById("img01");
+				var captionText = document.getElementById("caption");
+				
+				img.onclick = function(){
+					modal.style.display = "block";
+					modalImg.src = this.src;
+					captionText.innerHTML = this.alt;
+				}
+
+				// Get the <span> element that closes the modal
+				var span = document.getElementsByClassName("close")[0];
+
+				// When the user clicks on <span> (x), close the modal
+				span.onclick = function() { 
+					modal.style.display = "none";
+				}
+			</script>
+			
+			
+		</div>
+			
+			
+	<footer>
+	
+	
+		<p>
+			<svg width="24" height="24" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+				<path d="M4.271 18.3457C4.271 18.3457 6.50002 15.5 12 15.5C17.5 15.5 19.7291 18.3457 19.7291 18.3457" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+				<path d="M12 12C13.6569 12 15 10.6569 15 9C15 7.34315 13.6569 6 12 6C10.3431 6 9 7.34315 9 9C9 10.6569 10.3431 12 12 12Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg> 
+			Author: Mubarek Al-Mutawa
+		</p>
+		
+		
+		<p>
+			<svg width="24" height="24" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M7 9L12 12.5L17 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+				<path d="M2 17V7C2 5.89543 2.89543 5 4 5H20C21.1046 5 22 5.89543 22 7V17C22 18.1046 21.1046 19 20 19H4C2.89543 19 2 18.1046 2 17Z" stroke="currentColor" stroke-width="1.5"/>
+			</svg>
+			
+			<a href="mailto:almmub@dunwoody.edu">Email Me Here!</a>
+		</p>
+		
+		<p><small>Copyright &copy; Mubarek inc</small></p>
+		
+		<a href="https://github.com/almmub/Assignment5">Github Repository</a>
+		
+		<p>
+			<a href="#top">
+				<svg width="24" height="24" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M12.25 18.5V6M12.25 6L18.25 12M12.25 6L6.25 12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+				Back To Top of Page
+			</a>
+		</p>
+		
+		<button onclick = "gfg_Run()"> Click Here to Change Background Color</button>
+		
+		
+		<script> //script for button to change background color
+			var el_up = document.getElementById("GFG_UP");
+			var el_down = document.getElementById("GFG_DOWN");
+			var str = "Click on button to change the background color";
+          
+			el_up.innerHTML = str;
+			
+			function changeColor(color) {
+				document.body.style.background = color;
+			}
+              
+			function gfg_Run() {
+				changeColor('gold');
+			}         
+		</script>
+		
+		
+	</footer>
+	
+</body>
+</html>
