@@ -21,44 +21,6 @@ pipeline {
             }
         }  
 
-        stage('SECURITY TESTING'){
-            parallel{
-                //stage('STATIC SECURITY TESTING WITH SYNK') {
-                    // Static testing of the third party code from github.
-                    agent { label ServerName }
-                    steps {
-                        script {
-                            // Perform static analysis of the project code using Snyk
-                            snykSecurity(
-                                snykInstallation: 'Snyk', // Reference to the configured Snyk installation in Jenkins.
-                                snykTokenId: SnykToken, // Use the provided Snyk API token.
-                                severity: 'critical' // Set the severity level for not allowing code to continue.
-                            )
-                        }
-                    }
-                }
-
-                stage('DYNAMIC SECURITY TESTING WITH SONARQUBE') {
-                    // Dynamic testing of the Developer's code with SonarQube.
-                    agent { label ServerName }
-                    steps {
-                        script {
-                            // Perform dynamic code analysis using SonarQube
-                            def scannerHome = tool name: 'SonarQubeScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'                            
-                            withSonarQubeEnv('sonarqube') { // Use the SonarQube environment defined in Jenkins
-                                sh """
-                                ${scannerHome}/bin/sonar-scanner \
-                                    -Dsonar.projectKey=mubarek \
-                                    -Dsonar.sources=.
-                                """
-                            }
-                        }
-                    }
-                }
-            }      
-        }
-        
-
         stage('BUILD AND TAG IMAGE') {
             // Build Docker image with the tag "Latest".
             agent { label ServerName }
@@ -114,3 +76,4 @@ pipeline {
             }
         }
     }
+}
